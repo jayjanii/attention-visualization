@@ -12,3 +12,5 @@ wheels/
 # marimo files
 __marimo__/
 .marimo/
+
+data/
