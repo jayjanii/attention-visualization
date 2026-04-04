@@ -10,21 +10,13 @@ The core question: **can we look inside the attention mechanism and understand w
 
 Two methods were compared:
 
-**Last Layer Attention**:  extract the CLS token's attention weights from the final transformer block only, averaged across all 12 heads. Simple but noisy.
+**Last Layer Attention**:  extract the CLS token's attention weights from the final transformer block only, averaged across all 16 heads. Simple but noisy.
 
-**Attention Rollout**: propagate attention through all 12 layers by multiplying attention matrices sequentially, accounting for residual connections by adding the identity matrix at each step. More faithful to how information actually flows through the network.
+**Attention Rollout**: propagate attention through all 24 layers by multiplying attention matrices sequentially, accounting for residual connections by adding the identity matrix at each step. More faithful to how information actually flows through the network.
 
 ## Model
 
-`google/vit-large-patch16-224`:  a large ViT pretrained on ImageNet-1k with 86.6M parameters, 12 layers, 12 attention heads per layer, patch size 16×16, input resolution 224×224.
-
-## Setup
-
-```bash
-git clone https://github.com/jayjanii/attention-visualization
-cd attention-visualization
-uv run marimo edit notebook.py
-```
+`google/vit-large-patch16-224`:  a large ViT pretrained on ImageNet-21k and fine-tuned on ImageNet-1k with 307M parameters, 24 layers, 16 attention heads per layer, patch size 16×16, input resolution 224×224.
 
 Dependencies are managed with `uv`. The notebook fetches images directly from COCO's servers on demand - no local image storage needed.
 
@@ -48,7 +40,7 @@ One of the cleaner results. The model correctly classifies the subject and the a
 
 ---
 
-### Car — Foreground Bias, Background Miss
+### Car - Foreground Bias, Background Miss
 
 ![car_24](output/rollout/car_24.png)
 
@@ -88,6 +80,6 @@ No bicycle is clearly visible in this image, yet the model correctly predicted "
 
 - How images become token sequences in ViT (patching, flattening, positional embeddings)
 - The role of the CLS token as a learned aggregator that attends across all patches
-- How multi-head self-attention works in a vision context — same Q/K/V machinery as language models
+- How multi-head self-attention works in a vision context - same Q/K/V machinery as language models
 - Why residual connections matter and how they're accounted for in attention rollout
 - That attention visualization is a useful debugging tool but not a ground truth explanation — it shows correlation between attention and prediction, not causation
