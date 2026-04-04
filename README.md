@@ -2,7 +2,7 @@
 
 A personal learning project exploring how Vision Transformers (ViT) "see" images by visualizing their attention maps across 100 COCO images spanning 4 categories: cats, horses, cars, and bicycles.
 
-### ![Marimo Notebook](https://static.marimo.app/static/vit-attention-visualization-ikeu)
+### [Marimo Notebook](https://static.marimo.app/static/vit-attention-visualization-ikeu)
 
 ## What I Was Investigating
 
