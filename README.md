@@ -66,7 +66,7 @@ No bicycle is clearly visible in this image, yet the model correctly predicted "
 
 ## Limitations
 
-**ImageNet's vocabulary is quirky.** The model maps to 1000 ImageNet categories which are oddly specific - it knows "sorrel" (a horse color) and "Egyptian cat" but not generic "horse" or "cat." Many predictions that look wrong are actually correct at a finer granularity than expected.
+**ImageNet's vocabulary is quirky.** The model maps to 21,000 ImageNet categories which are oddly specific - it knows "sorrel" (a horse color) and "Egyptian cat" but not generic "horse" or "cat." Many predictions that look wrong are actually correct at a finer granularity than expected.
 
 **Averaging heads loses information.** Both methods average across attention heads before visualization. Individual heads often specialize meaningfully - some track foreground/background, others local texture, others global structure. Averaging collapses this into a single signal that can be misleading.
 
