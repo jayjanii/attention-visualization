@@ -2,6 +2,8 @@
 
 A personal learning project exploring how Vision Transformers (ViT) "see" images by visualizing their attention maps across 100 COCO images spanning 4 categories: cats, horses, cars, and bicycles.
 
+### ![Marimo Notebook](https://static.marimo.app/static/vit-attention-visualization-ikeu)
+
 ## What I Was Investigating
 
 Vision Transformers treat images as sequences of patches,  a 224×224 image gets divided into a 14×14 grid of 16×16 pixel patches, each becoming a token analogous to a word in a language model. The model uses multi-head self-attention across these 197 tokens (196 patches + 1 CLS token) to form its classification.
