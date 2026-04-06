@@ -58,7 +58,7 @@ Even as a human, the car in this image is barely visible. The attention map is n
 
 ---
 
-### Bicycle - Surprising Correct Classification
+### "Bicycle"
 
 ![bicycle_1](output/rollout/bicycle_1.png)
 
